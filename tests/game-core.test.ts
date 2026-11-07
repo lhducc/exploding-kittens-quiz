@@ -2,10 +2,16 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { questions } from "../lib/questions.ts";
 import type { GameAction } from "../lib/game-view.ts";
+import { isRoomPin } from "../lib/game-view.ts";
 import { parseProfiles } from "../lib/server/deck.ts";
 import { applyAction, gameView, newGame } from "../lib/server/game.ts";
 
 const profiles = parseProfiles(JSON.stringify(Array.from({ length: 10 }, () => [9, 5])));
+
+test("room PIN accepts six letters or digits and rejects other input", () => {
+  for (const pin of ["012345", "MeoNo9", "MeoNok"]) assert.ok(isRoomPin(pin));
+  for (const pin of [undefined, "12345", "1234567", "123456\n", "MèoNo9", "Meo 09"]) assert.equal(isRoomPin(pin), false);
+});
 
 test("uses the ten approved questions and answer key", () => {
   assert.equal(questions.length, 10);

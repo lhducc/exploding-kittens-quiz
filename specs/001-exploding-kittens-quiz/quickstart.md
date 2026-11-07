@@ -23,7 +23,7 @@ QUIZ_DRAW_PROFILES=[[5,2],[6,3],[7,3],[7,4],[8,3],[8,4],[9,4],[9,5],[10,4],[11,5
 ROOM_PIN=
 ```
 
-Điền `ROOM_PIN` bằng một mã 6 chữ số bạn chọn cho máy local.
+Điền `ROOM_PIN` bằng đúng 6 ký tự A–Z, a–z hoặc 0–9. Mã phân biệt chữ hoa và chữ thường.
 
 ```powershell
 npm.cmd ci
@@ -52,6 +52,6 @@ Mở `http://localhost:3000`. Nếu kiểm thử trên điện thoại cùng m�
 | Giờ hoàn thành | Kiểm tra cột Hoàn thành hiển thị giờ Việt Nam. Chọn Lọc theo giờ để xem điểm cao nhất trong các ván hoàn thành đúng hoặc trước mốc. |
 | Điện thoại | Đọc được tiếng Việt, không cuộn ngang, bấm được các nút và xem được bốn hoạt ảnh. |
 
-Nhóm duyệt bản local trước khi kết nối GitHub với Vercel và cấu hình Neon production. Đặt URL production, 10 cặp thật và một PIN riêng sáu chữ số trong biến môi trường của Vercel, áp dụng migration cho đúng cơ sở dữ liệu và kiểm tra một ván qua link Vercel trước khi gửi lớp.
+Nhóm duyệt bản local trước khi kết nối GitHub với Vercel và cấu hình Neon production. Đặt URL production, 10 cặp thật và một PIN riêng sáu ký tự trong biến môi trường của Vercel, áp dụng migration cho đúng cơ sở dữ liệu và kiểm tra một ván qua link Vercel trước khi gửi lớp.
 
 Khi cần đổi PIN production, sửa `ROOM_PIN` trong **Vercel → Project → Settings → Environment Variables**, chọn **Production** rồi redeploy. PIN mới áp dụng cho lượt vào phòng mới. [Quản lý biến môi trường trên Vercel](https://vercel.com/docs/environment-variables/managing-environment-variables)

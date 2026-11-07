@@ -13,7 +13,7 @@ let url: string;
 let cookie: string;
 let game: GameView;
 let player: PlayerView;
-const pin = String(randomInt(100000, 1000000));
+const pin = "Ab" + randomInt(1000, 10000);
 const tag = randomBytes(4).toString("hex");
 const names = ["Ánh " + tag, "Nam " + tag, "Mai " + tag, "Sơn " + tag];
 const pinKey = createHmac("sha256", pin).update("local-or-unknown").digest("hex");
@@ -81,6 +81,7 @@ test("same-origin API authorizes its own transitions and only one concurrent dra
   assert.equal((await post({ action: "draw", expectedVersion: 1 })).status, 401);
   assert.equal((await fetch(url + "/api/game?rank=1")).status, 401);
   assert.equal((await post({ action: "join", name: names[0], pin: "000000" })).status, 401);
+  assert.equal((await post({ action: "join", name: names[0], pin: pin.toUpperCase() })).status, 401);
   const initial = await startSession(names[0]);
   assert.match(initial.headers.get("cache-control") ?? "", /no-store/);
   const setCookie = initial.headers.get("set-cookie") ?? "";

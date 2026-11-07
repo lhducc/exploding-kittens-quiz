@@ -50,7 +50,7 @@ Là người chơi, mình muốn tiếp tục ván nếu tải lại trang, xem 
 
 ### Câu chuyện 4. Vào phòng và xem bảng xếp hạng (P2)
 
-1. Người chơi nhập tên hiển thị và PIN phòng sáu chữ số để vào chơi. PIN sai hoặc tên trùng sẽ hiện thông báo để sửa. Quá nhiều lần nhập PIN sai bị giới hạn tạm thời.
+1. Người chơi nhập tên hiển thị và PIN phòng gồm sáu ký tự A–Z, a–z hoặc 0–9 để vào chơi. PIN phân biệt chữ hoa và chữ thường. PIN sai hoặc tên trùng sẽ hiện thông báo để sửa. Quá nhiều lần nhập PIN sai bị giới hạn tạm thời.
 2. Sau khi hoàn tất đủ 10 câu, game lưu điểm và thời gian máy chủ ghi nhận ván. Bảng xếp hạng hiển thị một hàng mỗi người, sắp theo điểm cao nhất, rồi theo thời điểm đạt điểm đó. Người chơi trong phòng có thể lật trang danh sách và lọc lấy điểm cao nhất hoàn thành đúng hoặc trước mốc giờ Việt Nam đã chọn.
 
 ### Trường hợp biên

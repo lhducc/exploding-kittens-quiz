@@ -2,7 +2,7 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { isIP } from "node:net";
 import { NextRequest, NextResponse } from "next/server";
-import { letters } from "../../../lib/game-view.ts";
+import { isRoomPin, letters } from "../../../lib/game-view.ts";
 import type { GameAction, JoinAction, Letter } from "../../../lib/game-view.ts";
 import { parseProfiles } from "../../../lib/server/deck.ts";
 import { applyAction, completedScore, gameView, newGame } from "../../../lib/server/game.ts";
@@ -23,7 +23,7 @@ function parseCommand(body: unknown): Command | null {
   const count = Object.keys(body).length;
 
   if (action === "join") {
-    if (count !== 3 || typeof name !== "string" || typeof pin !== "string" || !/^\d{6}$/.test(pin)) return null;
+    if (count !== 3 || typeof name !== "string" || !isRoomPin(pin)) return null;
     const cleanName = name.normalize("NFKC").trim().replace(/\s+/gu, " ");
     if (!/^[\p{L}\p{N}][\p{L}\p{M}\p{N} ._'’-]{1,23}$/u.test(cleanName)) return null;
     return { action, name: cleanName, pin };
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
 async function join(request: NextRequest, command: JoinAction, token: string | null, saved: SavedGame | null, secure: boolean) {
   if (saved?.name) return json(view(saved));
   const pin = process.env.ROOM_PIN;
-  if (!pin || !/^\d{6}$/.test(pin)) throw new Error("ROOM_PIN cần được đặt bằng 6 chữ số.");
+  if (!isRoomPin(pin)) throw new Error("ROOM_PIN cần đúng 6 ký tự A–Z, a–z hoặc 0–9.");
   const valid = timingSafeEqual(Buffer.from(command.pin), Buffer.from(pin));
   const forwarded = process.env.VERCEL === "1" ? request.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() : null;
   const address = forwarded && isIP(forwarded) ? forwarded : "local-or-unknown";

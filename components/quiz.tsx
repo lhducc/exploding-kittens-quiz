@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { GameAction, GameView, JoinAction, Outcome, PlayerView } from "../lib/game-view";
-import { letters } from "../lib/game-view";
+import { letters, roomPinPattern } from "../lib/game-view";
 import { GameCard } from "./game-card";
 import { GameDialog } from "./game-dialog";
 import { Leaderboard } from "./leaderboard";
@@ -253,7 +253,8 @@ export function Quiz() {
         }}>
           <p className="muted">Tên bạn chọn sẽ hiện trên bảng xếp hạng.</p>
           <label>Tên người chơi<input name="name" placeholder="Ví dụ Minh Anh" autoComplete="nickname" minLength={2} maxLength={24} required /></label>
-          <label>PIN phòng<input name="pin" placeholder="6 chữ số" type="password" inputMode="numeric" pattern="[0-9]{6}" maxLength={6} autoComplete="off" required /></label>
+          <label>PIN phòng<input name="pin" placeholder="6 ký tự chữ hoặc số" type="password" pattern={roomPinPattern}
+            title="Nhập đúng 6 ký tự A–Z, a–z hoặc 0–9" maxLength={6} autoComplete="off" autoCapitalize="none" spellCheck={false} required /></label>
           {error && <p className="form-error" role="alert">{error}</p>}
           {!synced
             ? <button className="button secondary" type="button" disabled={pending} onClick={() => void retry()}>Kết nối lại</button>
