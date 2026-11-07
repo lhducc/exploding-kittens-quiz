@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 430">
+<defs><radialGradient id="halo"><stop stop-color="#ffe7a0" stop-opacity=".9"/><stop offset="1" stop-color="#ff8d17" stop-opacity="0"/></radialGradient></defs>
+  <circle cx="252" cy="214" r="218" fill="url(#halo)"/>
+  <path d="m241 4 25 101 50-87 4 106 80-59-28 96 102-27-66 76 107 12-92 45 70 61-107 5 53 76-102-27 12 95-69-71-30 93-35-93-72 70 9-92-98 25 49-78-100-6 76-52-95-42 99-17-67-75 102 24-27-94 75 57 2-98 52 80Z" fill="#ffbf2b" opacity=".64" transform="translate(42 34) scale(.82)"/>
+  <path d="M43 131l14 6 5-14 9 14 17 3-10 11 2 17-16-7-14 9 1-18Zm407 26 9 10 14-2-5 12 8 11-14 1-7 12-4-13-14-4 11-8ZM111 347l14 2 11-11 3 14 13 7-12 6-3 14-10-11-14 3 6-12Zm288-3 9 11 14-2-5 13 8 10-14 1-8 12-3-14-14-4 11-7Z" fill="#fff2b0"/>
+  <path d="M102 92 82 61m304 23 15-26m52 233 27 12M65 277l-25 15m258 95 6 21" fill="none" stroke="#ff9e31" stroke-linecap="round" stroke-width="8"/>
+  <ellipse cx="248" cy="377" rx="150" ry="20" fill="#370e13" opacity=".4"/>
+  <g transform="translate(64,-7) scale(1.9,1.72)"><g stroke="#42140b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M102 223c-29 7-47 7-68 3 17-7 31-23 37-38l15-47 36 4 15 46c7 17 19 27 30 32-20 5-39 4-65 0Z" fill="#f34a19"/>
+  <path d="M99 219c-9 4-14 3-30 5 18-15 21-43 24-64l13 1c1 28 8 48 21 62-13 0-18-1-28-4Z" fill="#ff9d25" stroke="none"/>
+  <path d="M80 76 66 37q-2-7 4-4l29 20 31-19q7-5 7 3l-5 34c19-3 28 8 29 16 21-4 34 9 33 21-1 12-8 17-15 19 2 18-16 26-32 23-7 14-24 18-40 10-13 10-29 3-35-6-14 8-26 0-29-11-24 2-38-10-35-24 1-14 13-19 25-19 0-16 19-24 33-20Z" fill="#ffb923"/>
+  <path d="M19 113q15-11 32-6m-5 28q9 3 18-1m71 2q17 9 28-5m-6-28q15-6 29 3" fill="none" stroke="#e67716" stroke-width="4"/>
+  <path d="m77 47 17 15-13 3Zm51 0-13 14 13 1Z" fill="#f57523" stroke="none"/>
+  <ellipse cx="82" cy="87" rx="17" ry="21" fill="#fff3d2" transform="rotate(-14 82 87)"/>
+  <ellipse cx="122" cy="85" rx="17" ry="22" fill="#fff3d2" transform="rotate(13 122 85)"/>
+  <circle cx="86" cy="84" r="5" fill="#4c1a10" stroke="none"/>
+  <circle cx="119" cy="82" r="5" fill="#4c1a10" stroke="none"/>
+  <path d="M95 111q9-12 17 0l-8 8Z" fill="#e94724" stroke-width="3"/>
+  <path d="M89 128q13-10 28 0l-3 13H94Z" fill="#801d14" stroke-width="3"/>
+  <path d="M57 117l-13-6m13 13-15 3m100-11 13-7m-12 15 13 1" stroke-width="3"/>
+</g></g>
+  <path d="M126 382q28-18 66-3m107 2q40-11 76 0" fill="none" stroke="#ff8b29" stroke-linecap="round" stroke-width="7"/>
+</svg>

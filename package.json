@@ -1,0 +1,30 @@
+{
+  "name": "exploding-kittens-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/deck.test.ts tests/game-core.test.ts tests/game-spells.test.ts",
+    "test:integration": "node --env-file-if-exists=.env.local --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/game-api.integration.test.ts",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.0.0",
+    "next": "^16.0.0",
+    "pg": "^8.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}
